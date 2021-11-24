@@ -1,0 +1,42 @@
+/*Connects Sets and Minifigs add a LIKE clause to search by one or the other
+*/
+SELECT minifigs.name, minifigs.fig_num, sets.name AS "set"
+FROM minifigs, sets, inventories, inventory_minifigs
+WHERE minifigs.fig_num = inventory_minifigs.fig_num
+AND inventory_minifigs.inventory_id = inventories.id
+AND inventories.set_num = sets.set_num
+LIMIT 15;
+
+/*Initial population of minifigs page*/
+SELECT minifigs.fig_num, minifigs.name, minifigs.num_parts, COUNT(DISTINCT sets.name)
+FROM minifigs, sets, inventories, inventory_minifigs, themes
+WHERE minifigs.fig_num = inventory_minifigs.fig_num
+AND inventory_minifigs.inventory_id = inventories.id
+AND inventories.set_num = sets.set_num
+GROUP BY minifigs.fig_num, minifigs.name, minifigs.num_parts
+LIMIT 100;
+
+/*Initial query for sets page*/
+SELECT sets.set_num, sets.name, themes.name, sets.num_parts, SUM(inventory_minifigs.quantity) AS num_figs, sets.year
+FROM sets, themes, inventories, inventory_minifigs
+WHERE sets.theme_id = themes.id
+AND sets.set_num = inventories.set_num
+AND inventory_minifigs.inventory_id = inventories.id
+GROUP BY sets.set_num, sets.name, themes.name, sets.num_parts, sets.year
+LIMIT 100;
+
+SELECT themes.name, themes.id, COUNT(DISTINCT sets.set_num)
+FROM themes, sets
+WHERE themes.parent_id is NULL
+AND sets.theme_id = themes.id
+GROUP BY themes.name, themes.id
+ORDER BY COUNT(DISTINCT sets.set_num) DESC;
+
+
+SELECT inventories.id, 0 as quantity
+FROM inventories
+WHERE inventories.id NOT IN (SELECT inventory_id FROM inventory_minifigs)
+UNION
+SELECT inventories.id, inventory_minifigs.quantity
+FROM inventories, inventory_minifigs
+WHERE inventories.id = inventory_minifigs.inventory_id;

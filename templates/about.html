@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--Zack Johnson and Amir Al-Sheikh-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LEGO Sets</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lego.css') }}" />
+    <script type="text/javascript" src="{{ url_for('static', filename='lego.js') }}" ></script>
+  </head>
+  <body>
+    
+<!--Top Banner Navigation-->
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <li><a href="/sets">Sets</a></li>
+      <li><a href="/minifigs">Minifigs</a></li>
+      <li><a class="active" href="/about">About</a></li>
+    </ul>
+
+<!--Main Content-->
+<h1>About</h1>
+
+<div class = "about">
+  <div class = "about_image">
+      <img src="{{ url_for('static', filename='first_lego.jpeg') }}" alt="Box art from Small House, The 7th Lego set ever released" style="width:500px;height:400px;">
+      <figcaption>Small House (1955): The 7th LEGO set released</figcaption>
+  </div>
+
+  <div class = "info">
+  <article>
+      <h3>What is Lego?</h3>
+      <p>Lego is a line of plastic construction toys that are manufactured by The Lego Group, a privately held company based in Billund, Denmark.
+        As of 2021, Lego was the largest toy company in the world. The company's flagship product, LEGO, consists of variously coloured interlocking plastic bricks accompanying an array of gears, figurines called minifigures, and various other parts.
+         Lego pieces can be assembled and connected in many ways to construct objects, including vehicles, buildings, and working robots.
+         Anything constructed can be taken apart again, and the pieces reused to make new things.</p>
+
+      <h3>Who are we?</h3>
+      <p>Some LEGO fans building a database of LEGO Sets, Minifgures, and pieces. Search for Sets or Minifigures by name or filter by theme to find your favorite LEGO products.</p>
+
+      <h3>The Data</h3>
+      <p> Our data includes the LEGO Parts/Sets/Colors and Inventories of every official LEGO set in the <a href= https://rebrickable.com/downloads/>Rebrickable database</a> up to November 2021</p>
+   </article>
+  </div>
+
+
+
+</div>
+
+</body>
+</html>

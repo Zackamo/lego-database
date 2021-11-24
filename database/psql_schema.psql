@@ -1,0 +1,83 @@
+/*PSQL tables for Webapp project
+  By: Zack Johnson and Amir Al-Sheikh
+
+  Built to match data from brickset: https://rebrickable.com/downloads/
+  Data downladed on 3 November, 2021.
+*/
+
+CREATE TABLE inventories(
+  id integer,
+  version integer,
+  set_num text
+);
+
+CREATE TABLE inventory_parts (
+  inventory_id integer,
+  part_num text,
+  color_id integer,
+  quantity integer,
+  is_spare boolean
+);
+
+CREATE TABLE parts (
+  part_num text,
+  name text,
+  part_cat_id integer,
+  part_material text
+);
+
+CREATE TABLE colors (
+  id integer,
+  name text,
+  rgb text,
+  is_trans boolean
+);
+
+CREATE TABLE part_categories (
+  id integer,
+  name text
+);
+
+CREATE TABLE part_relationships (
+  rel_type text,
+  child_part_num text,
+  parent_part_num text
+);
+
+CREATE TABLE elements (
+  element_id text,
+  part_num text,
+  color_id integer
+);
+
+CREATE TABLE inventory_minifigs (
+  inventory_id integer,
+  fig_num text,
+  quantity integer
+);
+
+CREATE TABLE minifigs (
+  fig_num text,
+  name text,
+  num_parts integer
+);
+
+CREATE TABLE inventory_sets (
+  inventory_id integer,
+  set_num text,
+  quantity integer
+);
+
+CREATE TABLE sets (
+  set_num text,
+  name text,
+  year integer,
+  theme_id integer,
+  num_parts integer
+);
+
+CREATE TABLE themes (
+  id integer,
+  name text,
+  parent_id integer
+);

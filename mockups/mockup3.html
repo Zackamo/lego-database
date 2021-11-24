@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--Zack Johnson and Amir Al-Sheikh-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LEGO Pieces</title>
+    <link rel="stylesheet" href="mockup.css" type="text/css">
+  </head>
+  <body>
+
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="mockup1.html">Sets</a></li>
+      <li><a href="mockup2.html">Minifigs</a></li>
+      <li><a class="active" href="mockup3.html">Pieces</a></li>
+      <li><a href="mockup4.html">About</a></li>
+    </ul>
+
+    <ul class="filters">
+      <h2>Filters</h2>
+      <li><ul class="filter_options">
+        <h3>Color Type</h3>
+        <li><input type="checkbox" id="main">Opaque</li>
+        <li><input type="checkbox" id="figs">Transparent</li>
+      </ul></li>
+      <li><ul class="filter_options">
+        <h3>Part Role</h3>
+        <li><input type="checkbox" id="main">Main Build</li>
+        <li><input type="checkbox" id="figs">Figs and Accessories</li>
+        <li><input type="checkbox" id="spare">Spare Part</li>
+      </ul></li>
+      <li><ul class="filter_options">
+        <h3>Collection</h3>
+        <select name="sort_by" id="sort_sets">
+          <option value="Set">Set</option>
+          <option value="Minifig">Minifig</option>
+        </select>
+        <input type="text" placeholder="Search. . .">
+
+          <li><input type="checkbox">75301 Luke's X-Wing</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h1>Lego Pieces</h1>
+
+    <div class="sidebar_info">
+      <h3>Color Overview</h3>
+      <table>
+        <tr><th>Proportion</th><th>Color</th></tr>
+        <tr><td>35%</td><td>Black</td></tr>
+        <tr><td>25%</td><td>Blue</td></tr>
+        <tr><td>5%</td><td>Red</td></tr>
+      </table>
+    </div>
+
+    <div class="results" id="pieces">
+      <input class="results_search" type="text" placeholder="Search . . .">
+      <label for="sort_by">Sort By:</label>
+      <select name="sort_by" id="sort_sets">
+        <option value="Name">Name</option>
+        <option value="Minifigs">Minifig ID</option>
+      </select>
+      <select name="order">
+        <option>High to Low</option>
+        <option>Low to High</option>
+      </select>
+      <table>
+        <tr><th>Part Number</th><th>Name</th><th>Color Name</th><th>Transparent?</th><th>Part Category</th></tr>
+        <tr><td>10048</td><td>Minifig Hair Tousled</td><td>Dark Brown</td><td></td><td>Minifig Headwear</td></tr>
+        <tr><td>2356</td><td>Brick 4x6</td><td>Dark Grey</td><td></td><td>Bricks</td></tr>
+      </table>
+    </div>
+
+  </body>
+</html>

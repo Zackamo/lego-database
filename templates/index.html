@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lego.css') }}" />
+      <script type="text/javascript" src="{{ url_for('static', filename='lego.js') }}" ></script>
+      <title>LEGO Data Project</title>
+  </head>
+
+  <body>
+<!--Top Banner Navigation-->
+    <ul class="navbar">
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="/sets">Sets</a></li>
+      <li><a href="/minifigs">Minifigs</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+
+<!--Main Content-->
+      <h1>CS 257: Web App Project</h1>
+      <a class="home_button" href="/sets">Search for LEGO Sets!</a>
+      <a class="home_button" href="/minifigs">Search for LEGO Minifigures!</a>
+
+  </body>
+</html>

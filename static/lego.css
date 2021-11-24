@@ -1,0 +1,191 @@
+/* Stylesheet for use with lego Webapp
+    By Zack Johnson
+*/
+
+body{
+  background: #e6f2ff;
+  margin: 0 0;
+}
+
+h1 {
+  text-align: center;
+  margin-left: 250px;
+  width: 30em;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+/*About Page*/
+
+.about{
+  display: inline-block;
+  border: 1px solid black;
+  background-color: #f1f1f1;
+  margin-left: 5%;
+  margin-top: 5em;
+  margin-right: 5%;
+  margin-bottom: 5em;
+}
+
+.about_image{
+  display: inline-block;
+  margin-left: 1%;
+  margin-top: 1em;
+  margin-right: 1%;
+  margin-bottom: .5em;
+  float: left;
+}
+
+/*Home Page*/
+
+a.home_button{
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 30px;
+  text-decoration: none;
+  background-color: #3399ff;
+  width: 30em;
+  margin-top: 3em;
+  margin-left: 500px;
+  box-shadow: 2px 2px 1px grey;
+}
+
+a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/*Results tables on sets and minifigs pages*/
+
+.results_search {
+  margin: .5em .5em;
+  width: 50%;
+}
+
+.results{
+  display: inline-block;
+  border: 1px solid black;
+  background-color: #f1f1f1;
+  width: 60em;
+  margin-left: 250px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 2em;
+}
+
+table {
+    display: inline-block;
+    table-layout:auto;
+    max-height: 40em;
+    width: auto;
+    overflow-y: scroll;
+    border-collapse: collapse;
+}
+
+table thead, table tbody tr {
+    width:100%;
+
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #f1f1f1;
+}
+
+tr {
+  border-bottom: 1px solid #000000;
+}
+
+th {
+  padding: 1em;
+  padding-right: 1.5em;
+  text-align: center;
+}
+
+td {
+  padding: 0.5em;
+  padding-right: 1.5em;
+  text-align: center;
+}
+
+td.num{
+  text-align: right;
+}
+
+/* Filters Sidebar */
+
+ul.filters{
+  list-style-type: none;
+  width: 200px;
+  position: fixed;
+  margin: 1.5em;
+  padding: 4px;
+  overflow: hidden;
+  background-color: #339933;
+  z-index: 6;
+  top: 3;
+  left: 1;
+}
+
+ul.filters ul.filter_options {
+  list-style-type: none;
+  display: block;
+  border: 1px solid black;
+  background-color: #f1f1f1;
+  color: black;
+  text-decoration: none;
+  margin: 10px;
+  padding: 5px;
+}
+
+ul.filters h3 {
+  text-align: center;
+}
+
+ul.filter_options h3 {
+    text-align: left;
+}
+
+/*Horizontal Navigation Based on Jeff Ondich's Sample4*/
+ul.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  list-style-type: none;
+  margin: 0;
+  padding: 8px;
+  overflow: hidden;
+  background-color: #3399ff;
+}
+
+ul.navbar li {
+    float: left;
+    background-color: #66b3ff;
+    margin: 3px 8px;
+}
+
+ul.navbar li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+ul.navbar li a.active {
+  background-color: #99ccff;
+}
+
+ul.navbar li a:hover {
+    background-color: #555;
+    color: white;
+}

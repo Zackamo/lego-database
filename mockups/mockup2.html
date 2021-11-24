@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--Zack Johnson and Amir Al-Sheikh-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LEGO Minifigures</title>
+    <link rel="stylesheet" href="mockup.css" type="text/css">
+  </head>
+  <body>
+
+<!--Top Banner Navigation -->
+    <ul class="navbar">
+      <li class="home_button"><a href="index.html">Home</a></li>
+      <li><a href="mockup1.html">Sets</a></li>
+      <li><a class="active" href="mockup2.html">Minifigs</a></li>
+      <li><a href="mockup3.html">Pieces</a></li>
+      <li><a href="mockup4.html">About</a></li>
+    </ul>
+
+<!--Side Bar-->
+    <ul class="filters">
+      <h2>Filters</h2>
+      <li><ul class="filter_options">
+        <h3>Theme</h3>
+        <li><input type="checkbox" id="theme158"><label for="theme158">Star Wars</label></li>
+        <li><input type="checkbox" id="theme246"><label for="theme246">Harry Potter</label></li>
+        <li><input type="checkbox" id="theme22"><label for="theme22">Creator</label></li>
+        <li><input type="checkbox" id="other"><label for="other">Other:</label><input type="text" placeholder="Theme Name"></li>
+      </ul></li>
+      <li><ul class="filter_options">
+        <h3>User Groups</h3>
+        <li><input type="checkbox" id="user1">Owned</li>
+        <li><input type="checkbox" id="user2">Wishlist</li>
+      </ul></li>
+    </ul>
+
+    <h1>Lego Minifigures</h1>
+
+    <div class="results">
+      <input class="results_search" type="text" placeholder="Search . . .">
+      <label for="sort_by">Sort By:</label>
+      <select name="sort_by" id="sort_sets">
+        <option value="Name">Name</option>
+        <option value="Minifigs">Minifig ID</option>
+      </select>
+      <select name="order">
+        <option>High to Low</option>
+        <option>Low to High</option>
+      </select>
+      <table>
+        <tr><th>Minifig Id</th><th>Name</th><th>Theme</th><th>Comes In:</th></tr>
+        <tr><td>76391</td><td>Luke Skywalker</td><td>Star Wars</td><td>15 Sets</td></tr>
+      </table>
+    </div>
+
+  </body>
+</html>

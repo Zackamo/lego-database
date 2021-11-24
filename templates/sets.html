@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--Zack Johnson-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>LEGO Sets</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='lego.css') }}" type="text/css">
+    <script type="text/javascript" src="{{ url_for('static', filename='lego.js') }}" ></script>
+  </head>
+  <body>
+
+<!--Top Banner Navigation-->
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <li><a class="active" href="/sets">Sets</a></li>
+      <li><a href="/minifigs">Minifigs</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+
+<!--Filters Sidebar-->
+    <ul class="filters">
+      <h2>Filters</h2>
+      <li><ul class="filter_options">
+        <h3>Theme</h3>
+        <select class="filter" name="theme_filter" id="by_theme"><select>
+      </ul></li>
+      <!-- FUTURE IDEA
+      <li><ul class="filter_options">
+        <h3>User Groups</h3>
+        <li><input type="checkbox" id="user1">Owned</li>
+        <li><input type="checkbox" id="user2">Wishlist</li>
+      </ul></li>-->
+    </ul>
+
+  <h1>Lego Sets</h1>
+
+<!--Main Search and Sort Options-->
+    <div class="results">
+      <input class="results_search" id="sets_search" type="search" placeholder="Search . . .">
+      <label for="sort_by">Sort By:</label>
+      <select name="sort_by" id="sort_by" class="sort">
+        <option value="-1" selected disabled hidden>Choose</option>
+        <!--option values correspond to table column number-->
+        <option value="1">Name</option>
+        <option value="3">Parts</option>
+        <option value="4">Minifigs</option>
+        <option value="5">Year</option>
+      </select>
+      <select name="order" id="order" class="sort">
+        <option value="desc">High to Low</option>
+        <option value="asc">Low to High</option>
+      </select>
+      
+<!--Results Table-->
+      <table id="table">
+        <thead><tr>
+          <th>Set Number</th>
+          <th>Name</th>
+          <th>Theme</th>
+          <th>Parts</th>
+          <th>Minifigures</th>
+          <th>Year</th>
+        </tr></thead>
+        <tbody id="results_table"></tbody>
+      </table>
+    </div>
+
+  </body>
+</html>

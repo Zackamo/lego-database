@@ -1,0 +1,33 @@
+''' Requirements.txt
+    Zack Johnson and Amir Al-Sheikh, October 30, 2021
+    Information on our dataset and a list of intended features and use cases.
+'''
+
+Dataset:
+
+The Brickset database has information on LEGO parts, sets, and minifigures and the relationships between them.
+For example, which parts and minifigs are contained in each set.
+
+The download for this data can be found at: https://rebrickable.com/downloads/.
+Unfortunately it appears that there is not an option to download all the data at once, instead we need to get a separate csv for each table at a time.
+
+
+User Stories:
+
+
+STORY: A lego fan wants to know which pieces are included in the LEGO Batman vs. The Joker set before purchasing.
+IMPLEMENTATION: One way to implement this is to have a search-by-set function, which would then pull up all known details about the set.
+
+STORY: A lego collector wants to be able to see if I have a certain character as a minifig in my collection.
+IMPLEMENTATION: Figures have a ‘name’ field to search, this might live in a page about one’s collection.
+
+STORY: A fan or collector wants to know what sets contain a certain figure.
+IMPLEMENTATION: Could implement through a link from the minifig search page to the list of sets that contain it.
+
+STORY: A fan wants to see the top 10 largest sets by piece count.
+STORY: A fan wants to see the 10 biggest sets in the Harry Potter theme.
+IMPLEMENTATION: Display a table of all sets which can be sorted by piece size and filtered.
+
+STORY: A builder wants to see the distribution of colors in a particular set (i.e. 45% of pieces in this set are blue)
+IMPLEMENTATION: One option is to have a set details page that includes things like color distribution. This seems complicated at this point,
+maybe there’s a better option or this could also be an if-time extension.

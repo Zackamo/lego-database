@@ -1,0 +1,73 @@
+LEGO database API
+
+REQUEST: /help
+GET parameters
+  NONE
+RESPONSE: Returns this help page as plain text
+
+REQUEST: /sets
+GET parameters
+  search_string (Optional, default='') -- Only return sets whose name contains
+    the serach_string, case insensitively.
+
+  theme (Optional, default='') -- Returns only sets whose theme id number match
+    the provided theme id. The default case allows all sets.
+
+  sort_by (Optional, default='-1') -- Sorts the results by the field with the
+    provided index. The following option defines the sort direction.
+    Returns in an arbitrary order by default or if the index is out of range.
+
+  order (Optional, default='asc') -- Defines the sort order of the previous option.
+    Either 'desc' for high to low or the default 'asc' for low to high.
+
+RESPONSE: a JSON list of dictionaries, each representing a LEGO set. The list
+is limited to a maximum of 100 entries. Each dictionary contains the following fields:
+
+  set_num -- (TEXT) The unique identifier for the set in the LEGO system
+  name -- (TEXT) The official common name for the LEGO set.
+  theme -- (TEXT) The name of the LEGO theme to which the set belongs.
+  num_parts -- (INTEGER) The number of pieces contained within the set.
+  num_figs -- (INTEGER) The number of minifigures included in the set.
+  year -- (INTEGER) The year the set was released.
+
+EXAMPLE:
+  /sets?search_string=anakin&theme=158
+
+  [{"set_num":"7131-1", "name":"Anakin's Podracer", "theme":"Star Wars", "num_parts":115, "num_figs":6, "year":1999},
+  {"set_num":"75087-1", "name":"Anakin's Custom Jedi Starfighter", "theme":"Star Wars", "num_parts":370, "num_figs":3, "year":2015},
+   ...]
+
+
+
+REQUEST: /minifigs
+GET parameters
+
+  search_string (Optional, default='') -- Only return minifigs whose name contains
+    the serach_string, case insensitively.
+
+  sort_by (Optional, default='-1') -- Sorts the results by the field with the
+    provided index. The following option defines the sort direction.
+    Returns in an arbitrary order by default or if the index is out of range.
+
+  order (Optional, default='asc') -- Defines the sort order of the previous option.
+    Either 'desc' for high to low or the default 'asc' for low to high.
+
+  theme (Optional, default='') -- Returns only sets whose theme id number match
+    the provided theme id. The default case allows all sets.
+
+RESPONSE: a JSON list of dictionaries, each representing a unique LEGO minifigure.
+the list is limited to a maximum of 100 entries. Each dictionary contains the
+following fields:
+
+  name -- (TEXT) The official name of the minifigure. for non-named characters this
+    often includes elements of a physical description.
+  fig_num -- (TEXT) The unique minifigure identifier in the LEGO system.
+  num_parts -- (INTEGER) The number of parts that make up the mingifigure.
+  num_sets -- (INTEGER) The number of sets that contain the minifigure.
+
+EXAMPLES:
+
+/minifigs?search_string=harry
+
+[{"name":"Harry Cane", "fig_num":"fig-000195", "num_parts":5, "num_sets":8},
+{"name":"Harry Potter, Black Tuxedo", "fig_num":"fig-000276", "num_parts":4, "num_sets":1}, ...]
